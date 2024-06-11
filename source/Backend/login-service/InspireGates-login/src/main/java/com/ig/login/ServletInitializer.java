@@ -1,4 +1,4 @@
-package com.ig_login;
+package com.ig.login;
 
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
