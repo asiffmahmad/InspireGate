@@ -11,7 +11,7 @@ public interface UserDetailsRepository extends JpaRepository<UserDetails, Intege
 	
 	
 	public UserDetails getById(Integer id);
-	public boolean getByUsername(String username);
+	public UserDetails getByUsername(String username);
 	
 
 }

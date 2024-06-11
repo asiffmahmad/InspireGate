@@ -26,6 +26,8 @@ public class MainController {
 
 	@PostMapping("/adduser")
 	public ResponseEntity<String> createUSer(@RequestBody Map<String, Object> userdata) {
+		
+		System.out.println(userdata);
 
 		return userService.addUser(userdata);
 
