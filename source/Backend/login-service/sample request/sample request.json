@@ -1,0 +1,14 @@
+add user:- 
+
+localhost:8080/MainMenu/adduser
+{
+    "id": 1,
+    "username": "JohnDoe",
+    "firstname": "John",
+    "secondname": "Doe",
+    "date_of_creation": "2024-06-11",
+    "email": "john.doe@example.com",
+    "phno": "+1234567890",
+    "add1": "123 Main St",
+    "add2": "Apt 101"
+  }
