@@ -1,0 +1,40 @@
+10-06-24
+
+
+
+InspireGate
+
+Welcome to InspireGate, a blog platform dedicated to sharing inspirational and motivational content. This project aims to provide users with a seamless experience to read, share, and contribute to a collection of inspiring stories and articles.
+
+
+LOGIN FORM 
+
+username is case sencitive 
+passord is not case sencitive
+
+
+FRONT END 
+angular froms
+
+LOG IN FORM 
+ELCOME FORM WITH RANDOM QUATATION
+
+BACK END services
+
+1)login service with loading home page
+this ill contain create user, validate user, modify user delete user
+
+java 17, data jpa lmbok , all post man methods ,my sql
+auto username generate
+
+ ADD USER
+ MODIFY USER 
+ DELETE USER 
+ QUOTE 
+otp validatation both mobile and email 
+add any external api to fetch something
+
+
+
+source 
+https://github.com/hiteshchoudhary/apihub
