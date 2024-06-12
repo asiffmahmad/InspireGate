@@ -5,72 +5,114 @@ import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Table;
-
+import jakarta.persistence.Column;
 import java.util.Date;
 
 @Entity
 @Table(name = "UserDetails")
 public class UserDetails {
-	
-	@Id
-    @GeneratedValue(strategy =GenerationType.IDENTITY)
-	private int id;
-	private String username;
-	private String firstname;
-	private String secondname;
-	private Date dateofcreation;
-	private String email;
 
-	// Constructor
-	public UserDetails() {
-	}
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private int id;
 
-	// Getters and Setters
-	public int getId() {
-		return id;
-	}
+    @Column(name = "username", nullable = false, length = 50)
+    private String username;
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    @Column(name = "firstname", length = 50)
+    private String firstname;
 
-	public String getUsername() {
-		return username;
-	}
+    @Column(name = "secondname", length = 50)
+    private String secondname;
 
-	public void setUsername(String username) {
-		this.username = username;
-	}
+    @Column(name = "date_of_creation")
+    private Date dateOfCreation;
 
-	public String getFirstname() {
-		return firstname;
-	}
+    @Column(name = "email", nullable = false, length = 100)
+    private String email;
 
-	public void setFirstname(String firstname) {
-		this.firstname = firstname;
-	}
+    @Column(name = "phno", nullable = false, length = 13)
+    private String phno;
 
-	public String getSecondname() {
-		return secondname;
-	}
+    @Column(name = "add1", length = 50)
+    private String add1;
 
-	public void setSecondname(String secondname) {
-		this.secondname = secondname;
-	}
+    @Column(name = "add2", length = 50)
+    private String add2;
 
-	public Date getDateofcreation() {
-		return dateofcreation;
-	}
+    // Default constructor
+    public UserDetails() {}
 
-	public void setDateofcreation(Date dateofcreation) {
-		this.dateofcreation = dateofcreation;
-	}
+    // Getters and Setters
+    public int getId() {
+        return id;
+    }
 
-	public String getEmail() {
-		return email;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public void setEmail(String email) {
-		this.email = email;
-	}
+    public String getUsername() {
+        return username;
+    }
+
+    public void setUsername(String username) {
+        this.username = username;
+    }
+
+    public String getFirstname() {
+        return firstname;
+    }
+
+    public void setFirstname(String firstname) {
+        this.firstname = firstname;
+    }
+
+    public String getSecondname() {
+        return secondname;
+    }
+
+    public void setSecondname(String secondname) {
+        this.secondname = secondname;
+    }
+
+    public Date getDateOfCreation() {
+        return dateOfCreation;
+    }
+
+    public void setDateOfCreation(Date dateOfCreation) {
+        this.dateOfCreation = dateOfCreation;
+    }
+
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPhno() {
+        return phno;
+    }
+
+    public void setPhno(String phno) {
+        this.phno = phno;
+    }
+
+    public String getAdd1() {
+        return add1;
+    }
+
+    public void setAdd1(String add1) {
+        this.add1 = add1;
+    }
+
+    public String getAdd2() {
+        return add2;
+    }
+
+    public void setAdd2(String add2) {
+        this.add2 = add2;
+    }
 }

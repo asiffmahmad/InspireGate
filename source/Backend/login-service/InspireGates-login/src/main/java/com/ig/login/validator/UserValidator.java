@@ -1,52 +1,46 @@
 package com.ig.login.validator;
 
+import java.util.List;
 import java.util.Map;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
-
+import org.springframework.stereotype.Component;
 import com.ig.login.entity.UserDetails;
 import com.ig.login.repo.UserDetailsRepository;
 
-
+@Component
 public class UserValidator {
 
-	@Autowired
-	UserDetailsRepository userDetailsRepository;
+    @Autowired
+    private UserDetailsRepository userDetailsRepository;
 
-	@Autowired
-	UserDetails userDetails;
+    public boolean UserExist(Map<String, Object> userdata) {
+        boolean result = false;
+        String username;
 
-	public boolean UserExist(Map<String, Object> userdata) {
+        try {
+            username = (String) userdata.get("username");
+            System.out.println("UserId>>>" + username+"<<<<");
+           // UserDetails userDetails = userDetailsRepository.findByUsername(username);
+            //System.out.println("userDetails>>"+userDetails);
 
-		boolean result = false;
-		String firstName;
-		String lastName;
-		String username ;
-		UserDetails result1;
 
-		try {
+                UserDetails newUser = new UserDetails();
+                newUser.setUsername((String) userdata.get("username"));
+                newUser.setFirstname((String) userdata.get("firstname"));
+                newUser.setSecondname((String) userdata.get("secondname"));
+                newUser.setEmail((String) userdata.get("email"));
+                newUser.setPhno((String) userdata.get("phno"));
+                newUser.setAdd1((String) userdata.get("add1"));
+                newUser.setAdd2((String) userdata.get("add2"));
+                userDetailsRepository.save(newUser);
+                result=false;
+            
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
 
-			firstName = (String) userdata.get("firstname");
-			lastName = (String) userdata.get("secondname");
-			username = (String) userdata.get("username");
-			String UserId = firstName + "_"+lastName;
-			System.out.println("UserId"+UserId);
-			result1 = userDetailsRepository.getByUsername(UserId);
-			if (result1 != null) {
-				System.out.println("working");
-				result=true;
-			}
-			else {
-				System.out.println("not working");
-			}
-		} catch (Exception e) {
-			result = false;
-			e.printStackTrace();
-		} finally {
-
-		}
-
-		return result;
-	}
-
+        return result;
+    }
 }
