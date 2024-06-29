@@ -24,6 +24,9 @@ BACK END services
 1)login service with loading home page
 this ill contain create user, validate user, modify user delete user
 
+otp validation
+VZEJ9TQR7TNMNNZCVFKX52ET
+
 java 17, data jpa lmbok , all post man methods ,my sql
 auto username generate
 

@@ -9,6 +9,8 @@ public interface UserDetailsRepository extends JpaRepository<UserDetails, Intege
     
     // Custom query method to find a user by username
     UserDetails findByUsername(String username);
+    
+    void deleteByUsername(String username); // Add this method
 
     // Additional custom query methods can be added here if needed
 }
