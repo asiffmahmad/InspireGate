@@ -21,17 +21,36 @@ public class OtpController {
 	public ResponseEntity<String> sendOtpEmail(@RequestBody Map<String, String> requestBody) {
 		try {
 			String email = requestBody.get("email");
-			String otp = requestBody.get("otp");
-
-			if (email == null || otp == null) {
+			if (email == null) {
 				return ResponseEntity.badRequest().body("Email and OTP must be provided in the request body");
 			}
-
-			otpService.sendOtp(email, otp);
+			otpService.sendOtp(email);
 			return ResponseEntity.ok("OTP email sent successfully to " + email);
 		} catch (Exception e) {
 			e.printStackTrace();
 			return ResponseEntity.status(500).body("Failed to send OTP email");
 		}
 	}
+	
+	  @PostMapping("/validate-otp")
+	    public ResponseEntity<String> validateOtp(@RequestBody Map<String, String> requestBody) {
+	        try {
+	            String email = requestBody.get("email");
+	            String otp = requestBody.get("otp");
+	            if (email == null || otp == null) {
+	                return ResponseEntity.badRequest().body("Email and OTP must be provided in the request body");
+	            }
+	            boolean isValid = otpService.validateOtp(email, otp);
+	            if (isValid) {
+	                return ResponseEntity.ok("OTP is valid");
+	            } else {
+	                return ResponseEntity.badRequest().body("Invalid OTP");
+	            }
+	        } catch (Exception e) {
+	            e.printStackTrace();
+	            return ResponseEntity.status(500).body("Failed to validate OTP");
+	        }
+	    }
+	
+	
 }

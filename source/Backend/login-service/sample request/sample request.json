@@ -20,7 +20,6 @@ to sent otp
 localhost:8080/send-otp
 
 {
-  "email": "asiff@gmail.com",
-  "otp": "123456"
+  "email": "asiff@gmail.com"
 }
 
